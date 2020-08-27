@@ -1,0 +1,25 @@
+Data Analysis:
+
+1.portfolio.json{
+- id: offer id
+- offer_type
+- difficulty: minimum required spend to complete an offer
+- reward: stars given for completing an offer
+- duration: time for offer to be open, in days
+- channels
+ }
+
+2.profile.json{
+- age
+- became_member_on: date when customer created an app account
+- gender
+- id: customer id
+- income
+ }
+
+3.transcript.json{
+- event: record description (transaction, offer received, viewed, etc.)
+- person: customer id
+- time: time in hours since start of an offer
+- value: either an offer id or transaction amount depending on the event
+ }
