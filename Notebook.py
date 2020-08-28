@@ -15,7 +15,7 @@ ohe = {'email':[1,1,1,1,1,1,1,1,1,1],
        'social':[1,1,0,0,0,1,1,1,1,0],
        'web':[0,1,1,1,1,1,1,0,1,1]}
 
-oh = pd.DataFrame(ohe,columns = ['email','mobile','social','web']) 
+ohx = pd.DataFrame(ohe,columns = ['email','mobile','social','web']) 
 
 cleaned_portfolio = portfolio
-cleaned_portfolio = pd.concat([portfolio,oh],axis=1)
+cleaned_portfolio = pd.concat([portfolio,ohx],axis=1)
