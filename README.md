@@ -1,4 +1,20 @@
 # Purchasing-Pattern-in-Starbucks
+## Project Timeline
+- 25th August, 2020.
+   - [x] Repository created.
+- 26th August, 2020.
+   - [x] Understanding the problem statement.
+   - [x] Explored the data.
+   - [x] ReadME.md file created.
+- 27th August, 2020.
+   - [x] Distributing the work among the team members.
+   - [x] Issues created.
+   - [x] Data Analysed.
+   - [x] Repositories forked and pull request created for variable identification.
+- 28th August, 2020.
+   - [x] Data imported.
+   - [x] Data cleaning in process.
+
 ## 📄 Abstract
 The data simulates how people make purchasing decisions and how those decisions are influenced by promotional offers.
 Each person in the simulation has some hidden traits that influence their purchasing patterns and are associated with their observable traits. 
