@@ -14,6 +14,10 @@
 - 28th August, 2020.
    - [x] Data imported.
    - [x] Data cleaning started.
+   - [x] Landing page of our website created.
+ - 29th August, 2020.
+   - [x] Data cleaning completed.
+   - [x] Start Exploratory Data Analysis.
 
 ## 📄 Abstract
 The data simulates how people make purchasing decisions and how those decisions are influenced by promotional offers.
