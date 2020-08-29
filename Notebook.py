@@ -75,7 +75,8 @@ def cleaning_data():
     
     # Then we drop the reference column because it is not useful to us further analysis
     cleaned_profile = cleaned_profile.drop(['today_date'],axis=1)
-    
+    cleaned_profile['age_by_decade'] = pd.cut(cleaned_profile['age'], bins=range(10,120,10),right=False, labels=['10s','20s', '30s', '40s', '50s','60s', '70s', '80s', '90s', '100s'])
+    cleaned_profile['income_range'] = pd.cut(cleaned_profile['income'], bins=range(0,120001,10000),right=False, labels=['10k','20k', '30k', '40k', '50k','60k', '70k', '80k', '90k', '100k', '110k', '120k'])   
     
     # Data Cleaning of transcript.json
     cleaned_transcript = transcript
@@ -89,9 +90,7 @@ def cleaning_data():
     profile118 = profile[profile['age']==118]
     id118 = profile118['id']
     
-    for i in range(len(cleaned_transcript)):
-        if cleaned_transcript['person'][i] in list(id118):
-            cleaned_transcript = cleaned_transcript.drop(i)
+    cleaned_transcript = cleaned_transcript[~cleaned_transcript['person'].isin(id118)]
     
     cleaned_transcript['record'] = cleaned_transcript.value.apply(lambda x: list(x.keys())[0])
     cleaned_transcript['record_value'] = cleaned_transcript.value.apply(lambda x: list(x.values())[0])
