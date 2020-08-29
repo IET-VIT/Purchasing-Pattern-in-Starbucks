@@ -13,7 +13,7 @@
    - [x] Repositories forked and pull request created for variable identification.
 - 28th August, 2020.
    - [x] Data imported.
-   - [x] Data cleaning in process.
+   - [x] Data cleaning started.
 
 ## 📄 Abstract
 The data simulates how people make purchasing decisions and how those decisions are influenced by promotional offers.
