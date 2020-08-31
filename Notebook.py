@@ -58,7 +58,6 @@ def cleaning_data():
     # OneHotEncoding the gender column
     ohe = pd.get_dummies(cleaned_profile['gender'])
     cleaned_profile = pd.concat([cleaned_profile,ohe],axis=1)
-    cleaned_profile = cleaned_profile.drop(['gender'],axis=1)
     
     # To convert the became_member_on to date-time stamp because the machine will not
     # understand data corresponding to date in integer form.
@@ -75,7 +74,8 @@ def cleaning_data():
     
     # Then we drop the reference column because it is not useful to us further analysis
     cleaned_profile = cleaned_profile.drop(['today_date'],axis=1)
-    
+    cleaned_profile['age_by_decade'] = pd.cut(cleaned_profile['age'], bins=range(10,120,10),right=False, labels=['10s','20s', '30s', '40s', '50s','60s', '70s', '80s', '90s', '100s'])
+    cleaned_profile['income_range'] = pd.cut(cleaned_profile['income'], bins=range(0,120001,10000),right=False, labels=['10k','20k', '30k', '40k', '50k','60k', '70k', '80k', '90k', '100k', '110k', '120k'])   
     
     # Data Cleaning of transcript.json
     cleaned_transcript = transcript
@@ -89,9 +89,7 @@ def cleaning_data():
     profile118 = profile[profile['age']==118]
     id118 = profile118['id']
     
-    for i in range(len(cleaned_transcript)):
-        if cleaned_transcript['person'][i] in list(id118):
-            cleaned_transcript = cleaned_transcript.drop(i)
+    cleaned_transcript = cleaned_transcript[~cleaned_transcript['person'].isin(id118)]
     
     cleaned_transcript['record'] = cleaned_transcript.value.apply(lambda x: list(x.keys())[0])
     cleaned_transcript['record_value'] = cleaned_transcript.value.apply(lambda x: list(x.values())[0])
@@ -104,7 +102,7 @@ def cleaning_data():
     transactions = transactions.drop(['offer completed','offer viewed','offer received'],axis=1)
     transactions = transactions.drop(['transaction','record'],axis=1)
     transactions = transactions.rename(columns={'record_value':'amount'})
-    
+    transactions['amount_range'] = pd.cut(transactions['amount'], bins=range(0,1150,50),right=False, labels=['50','100', '150', '200','250','300','350','400','450','500','550','600','650','700','750','800','850','900','950','1000','1050','1100'])   
     # cleaning offers
     offers = offers.drop(['transaction','record'],axis=1)
     offers = offers.rename(columns={'record_value':'offer_id'})
