@@ -23,16 +23,17 @@ body .container{
 }
 
 #landing-h1{
-    font-family: Libre Caslon;
+    font-family: Libre Caslon Display;
     font-style: normal;
     font-weight: normal;
-    font-size: 90px;
+    font-size: 100px;
     line-height: 110px;
     margin-top: 0;
+    word-spacing: 6px;
 }
 
 #landing-captions{
-    font-family: Source Serif Pro;
+    font-family: calibri;
     font-style: normal;
     font-weight: normal;
     font-size: 25px;
