@@ -58,7 +58,6 @@ def cleaning_data():
     # OneHotEncoding the gender column
     ohe = pd.get_dummies(cleaned_profile['gender'])
     cleaned_profile = pd.concat([cleaned_profile,ohe],axis=1)
-    cleaned_profile = cleaned_profile.drop(['gender'],axis=1)
     
     # To convert the became_member_on to date-time stamp because the machine will not
     # understand data corresponding to date in integer form.
@@ -103,7 +102,7 @@ def cleaning_data():
     transactions = transactions.drop(['offer completed','offer viewed','offer received'],axis=1)
     transactions = transactions.drop(['transaction','record'],axis=1)
     transactions = transactions.rename(columns={'record_value':'amount'})
-    
+    transactions['amount_range'] = pd.cut(transactions['amount'], bins=range(0,1150,50),right=False, labels=['50','100', '150', '200','250','300','350','400','450','500','550','600','650','700','750','800','850','900','950','1000','1050','1100'])   
     # cleaning offers
     offers = offers.drop(['transaction','record'],axis=1)
     offers = offers.rename(columns={'record_value':'offer_id'})
