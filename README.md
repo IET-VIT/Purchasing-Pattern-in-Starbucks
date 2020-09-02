@@ -29,7 +29,7 @@
    - [x] Algorithm for the model was decided.
 - 2nd September, 2020.
    - [x] Input page creation completed.
-   - [x] Added some encoded columns to the merged columns.
+   - [x] Added an encoded columns to the merged columns.
    
 
 ## 📄 Abstract
