@@ -15,9 +15,22 @@
    - [x] Data imported.
    - [x] Data cleaning started.
    - [x] Landing page of our website created.
- - 29th August, 2020.
+- 29th August, 2020.
    - [x] Data cleaning completed.
    - [x] Start Exploratory Data Analysis.
+- 30th August, 2020.
+   - [x] Exploratory Data Analysis completed.
+   - [x] Creation of Input page begun.
+- 31st August, 2020.
+   - [x] Tried to merge the data into one pipeline.
+   - [x] Eliminated redundant features from the dataset.
+- 1st September, 2020.
+   - [x] Merging all the useful features in one dataframe.
+   - [x] Algorithm for the model was decided.
+- 2nd September, 2020.
+   - [x] Input page creation completed.
+   - [x] Added an encoded columns to the merged columns.
+   
 
 ## 📄 Abstract
 The data simulates how people make purchasing decisions and how those decisions are influenced by promotional offers.
@@ -32,7 +45,8 @@ We aim to create a web-app which will be used to predict the best possible offer
 
 ### 📍 Major Checkpoints and Pipelines 
 - ⛳ Data Science
-   - [ ] Data cleaning and pipelining
+   - [x] Data cleaning and pipelining
+   - [x] Exploratory Data Analysis
    - [ ] Building a model
    - [ ] Training the model
    - [ ] Testing the model
@@ -44,8 +58,8 @@ We aim to create a web-app which will be used to predict the best possible offer
    - [ ] Testing the API
 - ⛳ Web Development
    - [ ] Front End
-      - [ ] Landing page
-      - [ ] Input Form
+      - [x] Landing page
+      - [x] Input Form
       - [ ] Visualization of graphical data
    - [ ] Back End
       - [ ] Integrating the API with the web-app
