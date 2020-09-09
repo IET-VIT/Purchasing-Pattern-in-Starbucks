@@ -30,6 +30,13 @@
 - 2nd September, 2020.
    - [x] Input page creation completed.
    - [x] Added an encoded columns to the merged columns.
+- 3rd September, 2020.
+   - [x] Model building started.
+   - [x] Importance of individual features calculated.
+- 4th September, 2020.
+   - [x] Models split into two.
+   - [x] Input page changed.
+   - [x] One model created.
    
 
 ## 📄 Abstract
