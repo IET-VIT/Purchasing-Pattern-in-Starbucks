@@ -37,7 +37,15 @@
    - [x] Models split into two.
    - [x] Input page changed.
    - [x] One model created.
-   
+- 5th September, 2020.
+   - [x] Second model creaed.
+   - [x] Enhancement of model 1.
+   - [x] Enhancement of model 2.
+- 6th September, 2020.
+   - [x] Models built successfully.
+   - [x] Landing page hosted using Flask.
+- 7th September, 2020.
+   - [x] Models saved in Pickle files.   
 
 ## 📄 Abstract
 The data simulates how people make purchasing decisions and how those decisions are influenced by promotional offers.
