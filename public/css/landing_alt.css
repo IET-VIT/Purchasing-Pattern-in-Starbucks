@@ -42,10 +42,12 @@ header {
 }
 
 .container-left h1 {
-    font-size: 60px;
+    font-size: 80px;
     line-height: 80px;
     font-family: Libre Caslon Display;
     padding-bottom: 40px;
+    font-weight: normal;
+    font-style: normal;
 }
 
 .container-left h1 span {
@@ -57,6 +59,7 @@ header {
     line-height: 30px;
     color: #9C9999;
     padding-bottom: 40px;
+    font-family: Calibri;
 }
 
 .container-left button {
@@ -75,3 +78,4 @@ header {
 .container-right {
     float: right;
 }
+
