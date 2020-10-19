@@ -1,0 +1,36 @@
+#input-h1{
+    font-family: Libre Caslon Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 110px;
+    margin-top: 0;
+    word-spacing: 6px;
+}
+
+label{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 50px;
+    color: black;
+}
+
+
+
+body div .row .col input{
+    width: 70%;
+}
+
+.input-row{
+    margin-bottom: 70px;
+}
+
+.blur{
+    color: grey;
+}
+
+.switch-caption{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+}
+
+

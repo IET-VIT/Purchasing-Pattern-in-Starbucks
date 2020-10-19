@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 def cleaning_data():
-# Importing the datasets
+    # Importing the datasets
     portfolio = pd.read_json("portfolio.json",lines=True)
     profile = pd.read_json("profile.json",lines=True)
     transcript = pd.read_json("transcript.json",lines=True)
@@ -32,6 +32,7 @@ def cleaning_data():
     
     # renaming the id column to offer_id
     cleaned_portfolio = cleaned_portfolio.rename(columns={'id':'offer_id'})
+    
     
     # Data Cleaning of profile dataset
 
@@ -106,5 +107,18 @@ def cleaning_data():
     # cleaning offers
     offers = offers.drop(['transaction','record'],axis=1)
     offers = offers.rename(columns={'record_value':'offer_id'})
+
+    offers['offer_type'] = offers['offer_id'].copy()
+
+    offers['offer_type'].replace(['ae264e3637204a6fb9bb56bc8210ddfd','4d5c57ea9a6940dd891ad53e9dbe8da0',\
+                                 '9b98b8c7a33c4b65b9aebfe6a799e6d9','f19421c1d4aa40978ebb69ca19b0e20d'],\
+                                 'bogo', inplace=True)
+
+    offers['offer_type'].replace(['0b1e1539f2cc45b7b9fa7c272da2e1d7','2298d6c36e964ae4a3e7e9706d1fb8c2',\
+                                 'fafdcd668e3743c1bb461111dcafc2a4','2906b810c7d4411798c6938adc9daaa5'],\
+                                 'discount', inplace=True)
+
+    offers['offer_type'].replace(['3f207df678b143eea3cee63160fa8bed','5a8bc65990b245e5a138643cd4eb9837'],\
+                                 'informational', inplace=True)
     
     return cleaned_portfolio, cleaned_profile, offers, transactions

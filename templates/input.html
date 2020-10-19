@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<title>Growth Square</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
+{% endblock %}
+
+
+{% block body %}
+<div class="row body-content container ">
+    <h1 id="input-h1">Enter <span id="offer">Customer</span> Details</h1>
+</div>
+<div class="row container input-row">
+    <p class="switch-caption">Old Customer</p>
+    <div class="switch"  >
+        <label blue>
+          <input type="checkbox">
+          <span class="lever"  id="switch"></span>
+        </label>
+    </div>
+    <p class="switch-caption">New Customer</p>
+</div>
+<div class="row container input-row">
+    <div class="col m4">
+        <label for="">Gender</label>
+        <input type="text" name="" >
+    </div>
+    <div class="col m4">
+        <label for="">Membership Date</label>
+        <input type="date">
+    </div>
+    <div class="col m4">
+
+    </div>
+</div>
+<div class="row container input-row">
+    <div class="col m4 input">
+        <label for="">Age</label>
+        <input type="text" name="" >
+    </div>
+    <div class="col m4 input">
+        <label for="">Income</label>
+        <input type="number">
+    </div>
+    <div class="col m4 input">
+        <label for="" id="lastHead">Last Purchase Amt.</label>
+        <input type="number" id="lastAmt">
+    </div>
+</div>
+<div class="row container">
+    <a class="btn waves-effect waves-light btn-large landing-btn">Genrate Results</a>
+</div>
+<script>
+    var a = 0;
+    s = document.querySelector("#switch")
+    s.addEventListener("click", function(){
+        a=a==0?1:0
+        console.log(a)
+        if(a==1){
+        document.getElementById("lastAmt").disabled = true;
+        document.getElementById("lastHead").classList.add("blur");
+        }
+        else{
+            document.getElementById("lastAmt").disabled = false;
+            document.getElementById("lastHead").classList.remove("blur");
+        }
+    })
+  
+</script>
+
+{% endblock %}

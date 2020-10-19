@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Growth Square</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+{% endblock %}
+
+{% block body %}
+
+
+
+<div class="row body-content container">
+  <div class="col m6 s12">
+    <h1 id="landing-h1">Run <span id="offer">offers</span> which actually works.</h1>
+    <p id="landing-captions">Provide us with your customer details, and we help you with the best types of offers that
+      can drive maximum growth in your business.</p>
+    <a class="btn waves-effect waves-light btn-large landing-btn">Get started</a>
+  </div>
+  <div class="col m6">
+    <img src="{{ url_for('static', filename='images/graphics.png') }}" id="graphics" alt="">
+  </div>
+</div>
+
+{% endblock %}
