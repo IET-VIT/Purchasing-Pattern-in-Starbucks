@@ -14,5 +14,9 @@ def alternate():
 def input():
     return render_template('input.html')
 
+@app.route('/graph')
+def visualize():
+    return render_template('chart.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

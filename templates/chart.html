@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+  {% block head %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <title>My Chart.js Chart</title>
+  {% endblock %}
+
+
+  {% block body %} 
+
+  
+  <div class="container" style="position: relative; height:55vh; width:90vw">
+    <select name="cars" id="chart">
+        <option value="gender" selected="selected">Gender count</option>
+        <option value="age">Age count</option>
+      </select>
+    <canvas id="myChart"></canvas>
+  </div>
+  <script>
+
+    var dataset = [[6129,8484,211],[345,3444,221]]
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    // Global Options
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#777';
+
+    let massPopChart = new Chart(myChart, {
+      type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:['Female', 'Male', 'Others'],
+        datasets:[{
+          label:'Customer',
+          data:[
+            6129,
+            8484,
+            211
+          ],
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }]
+      },
+      options:{
+        title:{
+          display:true,
+          text:'Customer',
+          fontsize: 25
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000',
+            font: 25
+            }
+          },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true
+        },
+        maintainAspectRatio: false,
+      },
+    });
+
+    var index = {
+        gender: 0,
+        age: 1
+    }
+    document.getElementById("chart").onchange = function(){
+        var e = document.getElementById("chart");
+	    var selected = index[e.options[e.selectedIndex].value];
+        console.log(selected);
+
+        massPopChart.data.datasets[0].data = dataset[selected];
+        console.log(massPopChart.data.datasets[0].data)
+        massPopChart.update();
+    }
+  </script>
+
+{% endblock %}
+
+
+

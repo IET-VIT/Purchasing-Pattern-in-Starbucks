@@ -71,3 +71,6 @@ body .container{
     margin: 0px;
 }
 
+body select {
+    display: block;
+}
